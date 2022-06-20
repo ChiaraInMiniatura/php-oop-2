@@ -30,6 +30,12 @@ $prodotto3 = new Alimentari ("Animalia", 18 , 123456789, "manzo, carote e patate
 var_dump($prodotto1);
 var_dump($prodotto2);
 var_dump($prodotto3);
+
+function prezzoScontato($prezzo, $sconto){
+  $resoult = ($prezzo - ($prezzo* ($sconto/100)));
+  return $resoult;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +48,23 @@ var_dump($prodotto3);
 </head>
 <body>
   <h1>PHP-OOP-2</h1>
+
+  <h2>Ordine 1:</h2>
+  <?php echo $utente2->nome ?>
+  <?php echo $utente2->cognome ?>
+  compra:
+  <?php echo $prodotto1->nome ?>
+  al prezzo di:
+  <?php echo prezzoScontato($prodotto1->prezzo, $utente2->sconto) ?> €
+
+  <h2>Ordine 2:</h2>
+  <?php echo $utente1->nome ?>
+  <?php echo $utente1->cognome ?>
+  compra:
+  <?php echo $prodotto1->nome ?>
+  al prezzo di:
+  <?php echo prezzoScontato($prodotto1->prezzo, $utente1->sconto) ?> €
+
                 
   
 </body>
